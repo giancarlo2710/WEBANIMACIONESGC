@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>Proyecto 3 - Coco Rayado</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#111;
+    overflow:hidden;
+    font-family:Arial;
+}
+
+/* CONTENEDOR */
+.contenedor{
+    width:500px;
+    height:900px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+    background:#f4d233;
+}
+
+/* PALMERA */
+.palmera{
+    position:absolute;
+    top:-20px;
+    right:-20px;
+    width:220px;
+    transform:rotate(10deg);
+    animation:palmera 4s ease-in-out infinite alternate;
+}
+
+/* BLOQUE INICIAL */
+.inicial{
+    position:absolute;
+    width:100%;
+    height:100%;
+    animation:desaparecer 2s ease forwards;
+    animation-delay:3.5s;
+}
+
+/* TEXTOS */
+.texto1{
+    position:absolute;
+    top:320px;
+    left:40px;
+    color:#5b3200;
+    font-size:55px;
+    font-weight:bold;
+    letter-spacing:10px;
+}
+
+.texto2{
+    position:absolute;
+    top:380px;
+    left:40px;
+    color:white;
+    font-size:95px;
+    font-weight:bold;
+    line-height:90px;
+}
+
+/* COCOS */
+.coco{
+    position:absolute;
+    width:180px;
+    opacity:0;
+    animation: aparecer 1.5s ease forwards, girar 2s ease 1.5s forwards;
+}
+.c1{ top:120px; left:140px; }
+.c2{ top:500px; right:-30px; }
+.c3{ bottom:20px; left:-40px; }
+
+/* BOTON */
+.boton{
+    position:absolute;
+    bottom:40px;
+    left:40px;
+    color:white;
+    font-size:60px;
+    font-weight:bold;
+    line-height:60px;
+    text-shadow:0px 0px 10px rgba(255,255,255,0.7);
+}
+
+/* BLOQUE FINAL */
+.final{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    opacity:0;
+    text-align:center;
+    animation:final 2s ease forwards;
+    animation-delay:5.5s;
+}
+
+.frase{
+    font-size:70px;
+    font-weight:bold;
+    color:white;
+    text-shadow:0px 0px 10px rgba(0,0,0,0.5);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px; /* brecha más cerrada */
+}
+
+/* Imagen dentro de la frase */
+.frase img{
+    width:260px; /* más grande */
+    height:auto;
+    opacity:0;
+    transform:scale(0.8);
+    animation:imagen 2s ease forwards;
+    animation-delay:7s;
+}
+
+/* ANIMACIONES */
+@keyframes aparecer{
+    0%{ opacity:0; transform:scale(0.5); }
+    100%{ opacity:1; transform:scale(1); }
+}
+
+@keyframes girar{
+    0%{ transform:rotate(0deg); }
+    100%{ transform:rotate(15deg); }
+}
+
+@keyframes desaparecer{
+    0%{ opacity:1; }
+    100%{ opacity:0; transform:scale(0.9); }
+}
+
+@keyframes final{
+    0%{ opacity:0; transform:translate(-50%, -40%) scale(0.8); }
+    100%{ opacity:1; transform:translate(-50%, -50%) scale(1); }
+}
+
+@keyframes imagen{
+    0%{ opacity:0; transform:scale(0.8); }
+    100%{ opacity:1; transform:scale(1); }
+}
+@keyframes palmera{
+    0%{ transform:rotate(10deg); }
+    100%{ transform:rotate(18deg); }
+}
+</style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- BLOQUE INICIAL -->
+    <div class="inicial">
+        <div class="texto1">YA PROBASTE</div>
+        <div class="texto2">EL NUEVO<br>SABOR</div>
+
+        <img src="img2/coco(1).png" class="coco c1">
+        <img src="img2/coco(1).png" class="coco c2">
+        <img src="img2/coco](1).png" class="coco c3">
+    <!-- PALMERA -->
+    <img src="img2/palmera.png" class="palmera">
+
+        <div class="boton">PÍDELA<br>¡HOY MISMO!</div>
+    </div>
+
+    <!-- BLOQUE FINAL -->
+    <div class="final">
+        <div class="frase">
+            <div>COCO</div>
+            <div>+</div>
+            <img src="img2/coco_vainilla.png" alt="Coco Vainilla">
+            <div>VAINILLA</div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
